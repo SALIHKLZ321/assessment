@@ -1,0 +1,8 @@
+  <form [formGroup]="parentForm">
+    <div formArrayName="formArray">
+      <div *ngFor="let control of formArray.controls; let i = index">
+        <input formControlName="control" />
+      </div>
+    </div>
+  </form>
+  <app-child (onAddControl)="addControl($event)"></app-child>
